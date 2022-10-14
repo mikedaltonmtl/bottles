@@ -32,6 +32,8 @@ const bottles = function() {
 
   // print formatted results
   console.log("TOTAL BOTTLES:", result['drunkBottles']);
+  console.log("REMAINING BOTTLES:", result['emptyBottles']);
+  console.log("REMAINING CAPS:", result['caps']);
   console.log("TOTAL EARNED:");
   console.log("   BOTTLES:", result['earnedBottles']);
   console.log("   CAPS:", result['earnedCaps']);
