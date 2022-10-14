@@ -7,14 +7,14 @@
  */
 const bottles = function() {
 
-    // initialize return object
-    const result = {
-      drunkBottles:   0,
-      emptyBottles:   0,
-      caps:           0,
-      earnedBottles:  0,
-      earnedCaps:     0
-    }
+  // initialize return object
+  const result = {
+    drunkBottles:   0,
+    emptyBottles:   0,
+    caps:           0,
+    earnedBottles:  0,
+    earnedCaps:     0
+  };
 
   // validate investment and add to result
   if (process.argv.length > 2) {
@@ -42,8 +42,6 @@ const bottles = function() {
 const redeem = function(object) {
   // base case
   if (object['emptyBottles'] < 2 && object['caps'] < 4) return object;
-  
-// console.log('redeem', object);
 
   // recursive case
   // swap 2 empty bottles for one full bottle
@@ -52,7 +50,7 @@ const redeem = function(object) {
     object['drunkBottles'] += 1;
     object['emptyBottles'] -= 1; // 2 out, 1 in
     object['caps'] += 1;
-    object['earnedBottles'] +=1;
+    object['earnedBottles'] += 1;
   }
 
   // swap 4 caps for one full bottle
@@ -61,9 +59,8 @@ const redeem = function(object) {
     object['drunkBottles'] += 1;
     object['emptyBottles'] += 1;
     object['caps'] -= 3; // 4 out, 1 in
-    object['earnedCaps'] +=1;
+    object['earnedCaps'] += 1;
   }
-
   // recall function for next iteration
   redeem(object);
 };
